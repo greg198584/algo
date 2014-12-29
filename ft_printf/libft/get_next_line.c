@@ -6,13 +6,11 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/10 14:35:51 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/29 20:18:32 by glafitte         ###   ########.fr       */
+/*   Updated: 2014/11/17 11:51:52 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// use libft
-#include "get_next_line.h"
-#include "libft/libft.h"
+#include "libft.h"
 #include <unistd.h>
 
 static t_param	*gnl_create_param(int fd)
@@ -21,7 +19,7 @@ static t_param	*gnl_create_param(int fd)
 
 	if ((p = (t_param *)ft_memalloc(sizeof(t_param))) == NULL)
 		return (NULL);
-	p->fd =fd;
+	p->fd = fd;
 	p->next = p;
 	p->buff = NULL;
 	return (p);
