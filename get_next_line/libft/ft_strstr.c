@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/05 11:49:54 by glafitte          #+#    #+#             */
+/*   Updated: 2014/12/30 21:34:51 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
 
-# define BUFF_SIZE 1
+char	*ft_strstr(const char *s1, const char *s2)
+{
+	const char	*ptr_s1;
+	char		*test = "";
+	size_t		len;
 
-int	get_next_line(int const fd, char **line);
+	if (s1 == test && s2 == test)
+		return (test);
+	ptr_s1 = s1;
+	len = ft_strlen(s2);
+	while (*ptr_s1)
+	{
+		if (ft_memcmp (ptr_s1, s2, len) == 0)
+			return (char *)ptr_s1;
+		ptr_s1++;
+	}
+	return (NULL);
 
-#endif
+}

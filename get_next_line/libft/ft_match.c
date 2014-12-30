@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_match.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/17 11:33:33 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/17 11:49:59 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-
-# define BUFF_SIZE 1
-
-int	get_next_line(int const fd, char **line);
-
-#endif
+int	ft_match(char const *s1, char const *s2)
+{
+	if (!*s1 && !*s2)
+		return (1);
+	if (*s2 == '*')
+	{
+		if (!*s1)
+			return (ft_match(s1, s2 + 1));
+		return (ft_match(s1 + 1, s2) || ft_match(s1, s2 + 1));
+	}
+	return ((*s1 != *s2) ? 0 : ft_match(s1 + 1, s2 + 1));
+}

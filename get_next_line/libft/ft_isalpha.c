@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/05 14:27:12 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/05 15:08:54 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
 
-# define BUFF_SIZE 1
-
-int	get_next_line(int const fd, char **line);
-
-#endif
+int	ft_isalpha(int c)
+{
+	return (ft_islower(c) || ft_isupper(c));
+}

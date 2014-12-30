@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/06 14:34:46 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/12 09:43:37 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
 
-# define BUFF_SIZE 1
+static char	*ft_strndup_2(char const *src, size_t len)
+{
+	char	*str;
 
-int	get_next_line(int const fd, char **line);
+	str = ft_memalloc(len + 1);
+	if (str)
+	{
+		ft_memcpy(str, src, len);
+		str[len] = 0;
+	}
+	return (str);
+}
 
-#endif
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
+{
+	return ((s == NULL) ? NULL : ft_strndup_2(s + start, len));
+}

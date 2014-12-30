@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/03 13:42:28 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/08 09:35:27 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include <string.h>
 
-# define BUFF_SIZE 1
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*buffer;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	buffer = b;
+	while (len--)
+		*buffer++ = c;
+	return (b);
+}

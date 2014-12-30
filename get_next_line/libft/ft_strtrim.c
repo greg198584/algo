@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/06 16:33:23 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/08 09:14:26 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
 
-# define BUFF_SIZE 1
+char	*ft_strtrim(char const *s)
+{
+	char	*str;
+	size_t	i;
+	size_t	j;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	i = 0;
+	j = ft_strlen(s);
+	while (ft_isspace(*(s + i)))
+		i++;
+	while (ft_isspace(s[j - 1]))
+		j--;
+	str = ft_strsub(s, i, (j != 0) ? j -= i : j);
+	if (str == NULL)
+		return (NULL);
+	return (str);
+}

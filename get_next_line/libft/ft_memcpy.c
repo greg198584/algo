@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/03 16:52:50 by glafitte          #+#    #+#             */
+/*   Updated: 2014/12/29 21:45:49 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
 
-# define BUFF_SIZE 1
+void	*ft_memcpy(void *s1, const void *s2, size_t n)
+{
+	void	*ptr;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	ptr = s1;
+	while (n--)
+		*(unsigned int *)s1++ = *(unsigned int *)s2++;
+	return (ptr);
+}

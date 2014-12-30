@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/05 09:43:02 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/07 15:00:47 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
 
-# define BUFF_SIZE 1
+char	*ft_strncat(char *dst, const char *src, size_t n)
+{
+	unsigned int	size_src;
+	unsigned int	size_dst;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	size_src = ft_strlen(src);
+	size_dst = ft_strlen(dst);
+	if (size_src < n)
+		ft_strcpy(&dst[size_dst], src);
+	else
+	{
+		ft_strncpy(&dst[size_dst], src, n);
+		dst[size_dst + n] = '\0';
+	}
+	return (dst);
+}

@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/03 16:52:50 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/08 09:34:14 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include <string.h>
 
-# define BUFF_SIZE 1
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	const char	*srcc;
+	char		*dstt;
+	size_t		i;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	srcc = src;
+	dstt = dst;
+	i = n;
+	while (i-- > 0)
+		if ((*dstt++ = *srcc++) == c)
+			return (dstt);
+	return (NULL);
+}

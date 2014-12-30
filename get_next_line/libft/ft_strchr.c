@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/05 11:18:40 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/11 10:25:58 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include <string.h>
 
-# define BUFF_SIZE 1
+char	*ft_strchr(const char *s, int c)
+{
+	const char	*ptr;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	if (s == NULL)
+		return (NULL);
+	ptr = s;
+	while (*ptr != (char)c)
+	{
+		if (*ptr == 0)
+			return (NULL);
+		ptr++;
+	}
+	return (char *)ptr;
+}

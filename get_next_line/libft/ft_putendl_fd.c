@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/11/11 13:47:23 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/07 16:46:42 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/07 16:48:39 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
+#include <unistd.h>
 
-# define BUFF_SIZE 1
-
-int	get_next_line(int const fd, char **line);
-
-#endif
+void	ft_putendl_fd(char const *s, int fd)
+{
+	write(fd, s, ft_strlen(s));
+	ft_putchar_fd('\n', fd);
+}

@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/04 15:55:50 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/06 08:49:25 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
 
-# define BUFF_SIZE 1
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	const unsigned char	*s1_ptr;
+	const unsigned char	*s2_ptr;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	s1_ptr = s1;
+	s2_ptr = s2;
+	while (n--)
+	{
+		if (*s1_ptr != *s2_ptr)
+		{
+			if (*s1_ptr < *s2_ptr)
+				return (-1);
+			else
+				return (1);
+		}
+		s1_ptr++;
+		s2_ptr++;
+	}
+	return (0);
+}

@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/04 17:11:16 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/07 14:44:20 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
 
-# define BUFF_SIZE 1
+char	*ft_strcat(char *dst, const char *src)
+{
+	const char	*src_ptr;
+	char		*dst_ptr;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	src_ptr = src;
+	dst_ptr = dst + ft_strlen(dst);
+	*dst_ptr++ = *src_ptr;
+	while (*src_ptr++)
+		*dst_ptr++ = *src_ptr;
+	return (dst);
+}

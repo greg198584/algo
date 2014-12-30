@@ -6,89 +6,36 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/10 14:35:51 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/29 20:18:32 by glafitte         ###   ########.fr       */
+/*   Updated: 2014/12/30 22:27:46 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// use libft
 #include "get_next_line.h"
 #include "libft/libft.h"
 #include <unistd.h>
 
-static t_param	*gnl_create_param(int fd)
+int		get_next_line(int const fd, char **line)
 {
-	t_param	*p;
+	static char	*buff;
+	char		read_buf[BUFF_SIZE + 1];
+	char		*tmp;
+	int			r;
 
-	if ((p = (t_param *)ft_memalloc(sizeof(t_param))) == NULL)
-		return (NULL);
-	p->fd =fd;
-	p->next = p;
-	p->buff = NULL;
-	return (p);
-}
-
-static t_param	*gnl_add_param(int fd, t_param *param)
-{
-	t_param	*p;
-
-	if ((p = (t_param *)ft_memalloc(sizeof(t_param))) == NULL)
-		return (NULL);
-	p->fd = fd;
-	p->next = param->next;
-	p->buff = NULL;
-	param->next = p;
-	return (p);
-}
-
-static t_param	*gnl_init_param(int fd, t_param *param)
-{
-	t_param	*p;
-
-	p = param;
-	if (param == NULL)
-		param = gnl_create_param(fd);
-	else
+	while (!ft_strchr(buff, '\n') && line)
 	{
-		while (param->next != NULL)
-		{
-			if (param->fd == fd)
-				break ;
-			if (param->next == p)
-			{
-				param = gnl_add_param(fd, param);
-				break ;
-			}
-			param = param->next;
-		}
-	}
-	return (param);
-}
-
-int				get_next_line(int const fd, char **line)
-{
-	static t_param	*p;
-	char			r_buf[BUFF_SIZE + 1];
-	char			*tmp;
-	int				i;
-
-	p = gnl_init_param(fd, p);
-	while (!ft_strchr(p->buff, '\n'))
-	{
-		if ((i = read(p->fd, r_buf, BUFF_SIZE)) < 1)
+		if ((r = read(fd, read_buf, BUFF_SIZE)) < 1)
 			break ;
-		r_buf[i] = 0;
-		p->buff = (!p->buff) ? ft_strdup(r_buf) : ft_strjoin(p->buff, r_buf);
+		read_buf[r] = 0;
+		buff = (!buff) ? ft_strdup(read_buf) : ft_strjoin(buff, read_buf);
 	}
-	if ((tmp = ft_strchr(p->buff, '\n')))
+	if ((tmp = ft_strchr(buff, '\n')) != NULL && line)
 	{
-		*line = p->buff;
-		p->buff = tmp + 1;
-		*tmp = 0;
+		*line = buff;
+		buff = tmp + 1;
+		*tmp = '\0';
+		return (1);
 	}
-	else
-	{
-		*line = p->buff;
-		return (0);
-	}
-	return (1 - (tmp == NULL) * 2);
+	else if (line)
+		*line = buff;
+	return ((!line) ? -1 : r);
 }

@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 14:35:56 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 22:17:51 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/03 16:58:20 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/08 08:14:16 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "libft.h"
 
-# define BUFF_SIZE 1
+char	*ft_itoa(int n)
+{
+	char *p;
 
-int	get_next_line(int const fd, char **line);
-
-#endif
+	p = ft_strnew(20) + 19;
+	if (n >= 0 && p)
+	{
+		*--p = '0' + (n % 10);
+		while ((n /= 10) != 0)
+			*--p = '0' + (n % 10);
+	}
+	else if (p)
+	{
+		*--p = '0' - (n % 10);
+		while ((n /= 10) != 0)
+			*--p = '0' - (n % 10);
+		*--p = '-';
+	}
+	return (p);
+}
