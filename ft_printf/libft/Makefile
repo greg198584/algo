@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/10 13:50:00 by glafitte          #+#    #+#              #
-#    Updated: 2014/12/29 20:15:44 by glafitte         ###   ########.fr        #
+#    Updated: 2014/12/31 09:15:21 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,8 +73,6 @@ SRCS =ft_atoi.c \
 		ft_putnbr_fd.c \
 		\
 		ft_itoa.c \
-		get_next_line.c \
-		get_next_line_simple.c \
 		ft_pow.c \
 		ft_strrep.c \
 		ft_match.c \
