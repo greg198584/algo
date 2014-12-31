@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:49:54 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 21:34:51 by glafitte         ###   ########.fr       */
+/*   Updated: 2014/12/31 09:14:37 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 char	*ft_strstr(const char *s1, const char *s2)
 {
 	const char	*ptr_s1;
-	char		*test = "";
+	char		*test;
 	size_t		len;
 
+	test = "";
 	if (s1 == test && s2 == test)
 		return (test);
 	ptr_s1 = s1;
@@ -29,5 +30,4 @@ char	*ft_strstr(const char *s1, const char *s2)
 		ptr_s1++;
 	}
 	return (NULL);
-
 }

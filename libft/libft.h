@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/30 18:53:29 by glafitte         ###   ########.fr       */
+/*   Updated: 2014/12/31 09:16:10 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,8 @@
 # define LIBFT_H
 # include <string.h>
 
-# define BUFF_SIZE		1
 # define REPLACE_ONCE	0
 # define REPLACE_EMPTY	""
-
-typedef struct			s_param
-{
-	int					fd;
-	char				*buff;
-	struct s_param		*next;
-}						t_param;
 
 void					ft_putstr(char const *s);
 void					ft_putchar(char c);
@@ -84,8 +76,6 @@ void					ft_putchar_fd(char c, int fd);
 void					ft_putstr_fd(char const *s, int fd);
 void					ft_putendl_fd(char const *s, int fd);
 void					ft_putnbr_fd(int n, int fd);
-int						get_next_line(int const fd, char **line);
-int						get_next_line_simple(int const fd, char **line);
 int						ft_pow(int n, int p);
 int						ft_match(char const *s1, char const *s2);
 char					*ft_strrep(char *str, char const *sub, char const *rep,
@@ -98,7 +88,7 @@ char					*ft_char_to_str(char c);
 char					*ft_char_rep(char *str, char c1, char c2, int recurs);
 char					*ft_str_rem(char *str, char *s, int recurs);
 char					*ft_char_rem(char *str, char c, int recurs);
-char					*ft_strtrim_left(char *s, int  n);
+char					*ft_strtrim_left(char *s, int n);
 char					*ft_strtrim_right(char *s, int n);
 
 #endif
