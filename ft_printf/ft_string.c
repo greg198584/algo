@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 09:58:55 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/23 16:17:15 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/13 16:01:05 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,4 @@ int			ft_test_big_s(const char *fmt, int i, va_list ap)
 		}
 		i++;
 	}
-	return (0);
 }
