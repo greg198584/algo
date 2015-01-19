@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/01/19 11:34:31 by glafitte         ###   ########.fr        #
+#    Updated: 2015/01/19 11:58:48 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@
 
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror -g -I include/
-LIBX = -L /usr/X11/lib -lmlx -lX11 -lXext
 CC = gcc
 SRCS =	src/ft_atoi.c \
 		src/ft_isalnum.c \
