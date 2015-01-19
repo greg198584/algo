@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/01/19 12:23:34 by glafitte         ###   ########.fr        #
+#    Updated: 2015/01/19 16:57:58 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ SRCS =			src/ft_printf.c \
 				src/ft_string.c \
 				src/ft_precision.c \
 				src/ft_print_string.c \
+				src/ft_atof.c \
+				src/ft_ftoa.c \
 				\
 
 OBJ = $(SRCS:.c=.o)

@@ -6,17 +6,28 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/31 09:16:10 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/19 17:02:15 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <string.h>
 
 # define REPLACE_ONCE	0
 # define REPLACE_EMPTY	""
+# define BUFF_SIZE		0x2323
 
+typedef struct			s_gnlp
+{
+	int					fd;
+	char				*buf;
+	struct s_gnlp		*next;
+}						t_gnlp;
+
+int						ft_abs(int a);
+int						get_next_line(int const fd, char **line);
 void					ft_putstr(char const *s);
 void					ft_putchar(char c);
 int						ft_strcmp(char const *s1, char const *s2);

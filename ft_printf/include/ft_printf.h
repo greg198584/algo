@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 12:26:20 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 16:23:22 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/19 17:00:37 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@
 # define HEXA_2		'X'
 # define OCTAL_1	'o'
 # define OCTAL_2	'O'
+# define FLOAT		'f'
+
+# define MAX_FTOA	10000000
 
 typedef struct		s_size
 {
@@ -65,5 +68,6 @@ unsigned int		ft_putnbr_hexa(char *str, unsigned int nb, char option,
 									t_size *len);
 unsigned int		ft_atoui(char *str, unsigned int i);
 double				ft_atof(char *s);
+char				*ft_ftoa(float n);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 15:55:22 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 16:20:41 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/19 17:00:49 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
 
-char	*ft_epur_str(char *s)
+static	char	*ft_epur_str(char *s)
 {
 	int		i;
 	char	*ret;
@@ -66,27 +66,3 @@ double	ft_atof(char *s)
 		a *= 0.1;
 	return (a * sign);
 }
-char	*ft_ftoa(double number,int ndigit,char *buf)
-{  
-	long	int_part;
-	double	float_part;
-	int		i;
-	char	str_int[32];
-	char	str_float[32];
-
-	ft_memset(str_int,0,32);
-	ft_memset(str_float,0,32);
-	int_part = (long)number;
-	float_part = number - int_part;
-	ft_itoa(int_part, str_int, 10);
-	if(ndigit > 0)
-	{  
-		float_part = ft_abs(ft_pow(10,ndigit)*float_part);
-		ft_itoa((long)float_part,str_float,10);
-	}
-	i = strlen(str_int);
-	str_int[i] = '.';
-	strcat(str_int,str_float);
-	strcpy(buf,str_int);
-	return buf;
-} 

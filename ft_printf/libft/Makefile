@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/10 13:50:00 by glafitte          #+#    #+#              #
-#    Updated: 2014/12/31 09:15:21 by glafitte         ###   ########.fr        #
+#    Updated: 2015/01/19 16:28:58 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@
 
 NAME = libft.a
 FLAGS = -g -Wall -Werror -Wextra
-SRCS =ft_atoi.c \
+SRCS =	ft_abs.c \
+		ft_atoi.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
