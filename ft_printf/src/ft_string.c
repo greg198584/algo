@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 09:58:55 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 11:41:59 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/19 14:48:48 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,25 @@ int			ft_check_string(char *str, char option, t_size *len)
 	int	y;
 
 	y = 0;
-	if (option == 's')
-		ft_putstr_and_precision(str, len);
-	if (option == 'S')
+	if (!str)
+		return (0);
+	else
 	{
-		while (y < len->precision - 1)
+		if (option == 's')
+			ft_putstr_and_precision(str, len);
+		if (option == 'S')
 		{
-			if (len->precision > 9)
-				ft_putchar(' ');
-			else
-				ft_putchar('0');
-			y++;
+			while (y < len->precision - 1)
+			{
+				if (len->precision > 9)
+					ft_putchar(' ');
+				else
+					ft_putchar('0');
+				y++;
+			}
+			ft_putstr(g_str_save);
+			ft_strclr(g_str_save);
 		}
-		ft_putstr(g_str_save);
-		ft_strclr(g_str_save);
 	}
 	return (1);
 }

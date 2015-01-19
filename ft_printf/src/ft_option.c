@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/09 11:00:58 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 11:42:15 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/19 15:15:25 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_option_octal(int nbr, char option, t_size *len)
 	}
 	else if (option == 'O')
 	{
-		nbr_o = ft_conv_base(ft_uitoa((unsigned int)nbr), ft_get_base(10),
+		nbr_o = ft_conv_base(ft_uitoa((unsigned long int)nbr), ft_get_base(10),
 								ft_get_base(8));
 		ft_print_precision(len, ft_strlen(nbr_o));
 		len->count += ft_strlen(nbr_o);

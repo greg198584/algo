@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 12:26:20 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 11:53:06 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/19 16:23:22 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char				*ft_get_base(int n);
 void				ft_uint_convers(void);
 void				ft_float_convers(void);
 int					ft_detect_fmt(va_list ap, char option);
-char				*ft_uitoa(unsigned int nbr);
+char				*ft_uitoa(unsigned long int nbr);
 char				*ft_option_hexa(unsigned int nbr, char option, t_size *len);
 char				*ft_conv_u(char *nbr, char *base_from, char *base_to);
 int					ft_checking_c(char c, char option, t_size *len);
@@ -64,5 +64,6 @@ char				*ft_option_octal(int nbr, char option, t_size *len);
 unsigned int		ft_putnbr_hexa(char *str, unsigned int nb, char option,
 									t_size *len);
 unsigned int		ft_atoui(char *str, unsigned int i);
+double				ft_atof(char *s);
 
 #endif
