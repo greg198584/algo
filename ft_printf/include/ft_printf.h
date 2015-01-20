@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 12:26:20 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 17:00:37 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/20 10:32:37 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ unsigned int		ft_putnbr_hexa(char *str, unsigned int nb, char option,
 									t_size *len);
 unsigned int		ft_atoui(char *str, unsigned int i);
 double				ft_atof(char *s);
-char				*ft_ftoa(float n);
+char				*ft_ftoa(double n);
 
 #endif
