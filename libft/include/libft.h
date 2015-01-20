@@ -6,15 +6,15 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 16:25:01 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/20 11:24:18 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <ft_printf.h>
+# include <string.h>
 
 # define REPLACE_ONCE	0
 # define REPLACE_EMPTY	""

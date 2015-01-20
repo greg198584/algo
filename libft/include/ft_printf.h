@@ -6,16 +6,16 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 12:26:20 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/20 10:52:39 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/20 11:28:53 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include <libft.h>
 # include <stdarg.h>
 # include <stdlib.h>
-# include <libft.h>
 
 # define INT_D		'd'
 # define INT_I		'i'
@@ -31,8 +31,6 @@
 # define OCTAL_1	'o'
 # define OCTAL_2	'O'
 # define FLOAT		'f'
-
-# define MAX_FTOA	10000000
 
 typedef struct		s_size
 {
@@ -67,7 +65,7 @@ char				*ft_option_octal(int nbr, char option, t_size *len);
 unsigned int		ft_putnbr_hexa(char *str, unsigned int nb, char option,
 									t_size *len);
 unsigned int		ft_atoui(char *str, unsigned int i);
-double				ft_atof(char *s);
 char				*ft_ftoa(double n);
+float				ft_atof(const char *str);
 
 #endif
