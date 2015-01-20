@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/12 07:48:10 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 11:14:54 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/19 17:05:12 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ static void		ft_flag(const char *fmt, int i, va_list ap, t_size *len)
 		ft_putstr(ft_option_hexa(va_arg(ap, unsigned int), fmt[i], len));
 	else if (fmt[i] == OCTAL_1 || fmt[i] == OCTAL_2)
 		ft_putstr(ft_option_octal(va_arg(ap, unsigned int), fmt[i], len));
+	else if (fmt[i] == FLOAT)
+		ft_putstr(ft_ftoa(va_arg(ap, double)));
 	else
 		ft_putchar(fmt[i]);
 }
