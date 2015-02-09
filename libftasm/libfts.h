@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/09 15:13:38 by glafitte          #+#    #+#             */
-/*   Updated: 2015/02/09 15:37:20 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/02/09 17:03:15 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 */
 
 # define USE_FT_MIN
-//# define USE_FT_MAX
+# define USE_FT_MAX
 //# define USE_FT_ABS
 //# define USE_FT_ISUPPER
 //# define USE_FT_ISLOWER
-//# define USE_FT_BZERO
+# define USE_FT_BZERO
 //# define USE_FT_ISALPHA
 //# define USE_FT_ISDIGIT
 //# define USE_FT_ISALNUM
