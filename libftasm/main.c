@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/09 15:07:37 by glafitte          #+#    #+#             */
-/*   Updated: 2015/02/09 17:03:45 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/02/10 09:35:01 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -544,7 +544,7 @@ int main(int argc, char **argv)
 #ifdef	USE_FT_MAX
 	ft_test_max();
 #endif
-/*#ifdef	USE_FT_ABS
+#ifdef	USE_FT_ABS
 	ft_test_abs();
 #endif
 #ifdef	USE_FT_ISUPPER
@@ -556,11 +556,11 @@ int main(int argc, char **argv)
 #ifdef	USE_FT_ISALPHA
 	ft_test_isalpha();
 #endif
-*/
+
 #ifdef	USE_FT_BZERO
 	ft_test_bzero();
 #endif
-/*
+
 #ifdef	USE_FT_ISDIGIT
 	ft_test_isdigit();
 #endif
@@ -608,7 +608,7 @@ int main(int argc, char **argv)
 #endif
 #ifdef	USE_FT_STRDUP
 	ft_test_strdup();
-*/
+#endif
 
 #ifdef	USE_FT_CAT
 	printf("USE FT_CAT ENABLED\n");
