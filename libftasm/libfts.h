@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/09 15:13:38 by glafitte          #+#    #+#             */
-/*   Updated: 2015/02/10 09:49:40 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/02/10 21:19:59 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@
 # define USE_FT_ISUPPER
 # define USE_FT_ISLOWER
 # define USE_FT_BZERO
-//# define USE_FT_ISALPHA
-//# define USE_FT_ISDIGIT
-//# define USE_FT_ISALNUM
-//# define USE_FT_ISASCII
-//# define USE_FT_ISPRINT
-//# define USE_FT_TOUPPER
-//# define USE_FT_TOLOWER
-//# define USE_FT_STRLEN
+# define USE_FT_ISALPHA
+# define USE_FT_ISDIGIT
+# define USE_FT_ISALNUM
+# define USE_FT_ISASCII
+# define USE_FT_ISPRINT
+# define USE_FT_TOUPPER
+# define USE_FT_TOLOWER
+# define USE_FT_STRLEN
 //# define USE_FT_STRCAT
 //# define USE_FT_PUTS
 //# define USE_FT_PUTSTR

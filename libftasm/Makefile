@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/02/09 15:18:09 by glafitte          #+#    #+#              #
-#    Updated: 2015/02/09 15:18:11 by glafitte         ###   ########.fr        #
+#    Created: 2015/02/10 16:59:21 by glafitte          #+#    #+#              #
+#    Updated: 2015/02/10 17:10:27 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ $(NAME): $(O_FILES)
 
 $(O_DIR)/%.o: $(C_DIR)/%.s
 	@mkdir -p $(O_DIRS) $(O_DIR) 2> /dev/null || echo "" > /dev/null
-	@~/.brew/Cellar/nasm/2.11.06/bin/nasm $(FLAGS) -o $@ $< \
+	@/usr/local/Cellar/nasm/2.11.05/bin/nasm $(FLAGS) -o $@ $< \
 	&& printf "\033[0;0m%-34s\033[1;30m -->>\t\033[0;32m$@\033[0;0m\n" "$<" \
 	|| (printf "\033[0;0m%-34s\033[1;30m -->>\t\033[0;31m$@\033[0;0m\n" "$<" \
 		&& exit 1)
