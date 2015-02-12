@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/09 15:07:37 by glafitte          #+#    #+#             */
-/*   Updated: 2015/02/10 09:35:01 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/02/12 14:45:54 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -372,95 +372,6 @@ void	ft_test_puts(void)
 	printf("\n");
 }
 #endif
-
-
-#ifdef	USE_FT_PUTSTR
-void	ft_test_putstr(void)
-{
-	char *s1[] = {"\0", "Salut", "les", "potes", "Meow"};
-	int i;
-
-	printf("\t\t"C_BOLD""C_UNDER"Test PUTSTR"C_NONE"\n");
-	for (i = 0; i < 5; i++)
-	{
-		write(1, "Chaine a ecrire: [", 18);
-		if (i)
-			write(1, s1[i], strlen(s1[i]));
-		write(1, "]  ->  [", 8);
-		ft_putstr(s1[i]);
-		if (!i)
-			printf("]\n");
-		else
-			printf("]\n");
-	}
-	printf("\n");
-}
-#endif
-
-
-#ifdef	USE_FT_PUTSTRFD
-void	ft_test_putstrfd(void)
-{
-	char *s1[] = {"\0", "Salut", "les", "potes", "Meow"};
-	int i;
-
-	printf("\t\t"C_BOLD""C_UNDER"Test PUTSTR_FD"C_NONE"\n");
-	for (i = 0; i < 5; i++)
-	{
-		write(1, "Chaine a ecrire: [", 18);
-		if (i)
-			write(1, s1[i], strlen(s1[i]));
-		write(1, "]  ->  [", 8);
-		ft_putstr_fd(s1[i], i % 2 + 1);
-		printf("]\n");
-	}
-	printf("\n");
-}
-#endif
-
-
-#ifdef	USE_FT_PUTCHAR
-void	ft_test_putchar(void)
-{
-	int	s[10] = {0, 64, 78, 35, 98, 117, 85, 58, ' ', 111};
-	int i;
-
-	printf("\t\t"C_BOLD""C_UNDER"Test PUTCHAR"C_NONE"\n");
-	for (i = 0; i < 10; i++)
-	{
-		write(1, "Caractere a ecrire: [", strlen("Caractere a ecrire: ["));
-		if (i)
-			write(1, &s[i], 1);
-		write(1, "]  ->  [", 8);
-		ft_putchar(s[i]);
-		printf("]\n");
-	}
-	printf("\n");
-}
-#endif
-
-
-#ifdef	USE_FT_PUTCHARFD
-void	ft_test_putcharfd(void)
-{
-	int s[10] = {0, 64, 78, 35, 98, 117, 85, 58, ' ', 111};
-	int i;
-
-	printf("\t\t"C_BOLD""C_UNDER"Test PUTCHARFD"C_NONE"\n");
-	for (i = 0; i < 10; i++)
-	{
-		write(1, "Caractere a ecrire: [", strlen("Caractere a ecrire: ["));
-		if (i)
-			write(1, &s[i], 1);
-		write(1, "]  ->  [", 8);
-		ft_putchar_fd(s[i], i % 2 + 1);
-		printf("]\n");
-	}
-	printf("\n");
-}
-#endif
-
-
 
 #ifdef	USE_FT_MEMSET
 void	ft_test_memset(void)
