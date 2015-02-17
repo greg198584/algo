@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/20 11:56:04 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/02/17 15:41:56 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct			s_gnlp
 	struct s_gnlp		*next;
 }						t_gnlp;
 
+int						ft_strlen_s(const char *str);
 void					ft_puterror(char *error);
 int						ft_abs(int a);
 int						get_next_line(int const fd, char **line);

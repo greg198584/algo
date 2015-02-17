@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:01:54 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 14:05:44 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/02/17 15:42:54 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 #include <string.h>
 
 int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+		return (0);
+	while (str[i])
+		++i;
+	return (i);
+}
+
+int	ft_strlen_s(const char *str)
 {
 	const char				*p;
 	const unsigned long		*lp;
