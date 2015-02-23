@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/01/20 11:56:26 by glafitte         ###   ########.fr        #
+#    Updated: 2015/02/23 07:50:45 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror -g -I include/
 CC = gcc
-SRCS =	src/error.c \
+SRCS =	src/ft_uitobi.c \
+		src/error.c \
 		src/ft_abs.c \
 		src/ft_atoi.c \
 		src/ft_isalnum.c \
