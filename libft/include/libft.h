@@ -6,14 +6,13 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2015/02/23 07:49:56 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/03/31 16:09:06 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <ft_printf.h>
 # include <string.h>
 
 # define REPLACE_ONCE	0
@@ -27,6 +26,7 @@ typedef struct			s_gnlp
 	struct s_gnlp		*next;
 }						t_gnlp;
 
+int						ft_fprintf(int fd, char const *format, ...);
 char					*ft_uitobi(unsigned int value);
 int						ft_strlen_s(const char *str);
 void					ft_puterror(char *error);

@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/02/23 07:50:45 by glafitte         ###   ########.fr        #
+#    Updated: 2015/03/31 16:07:00 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,32 +87,15 @@ SRCS =	src/ft_uitobi.c \
 		src/ft_char_manip.c \
 		src/ft_chartostr.c \
 		src/get_next_line.c \
+		src/ft_fprintf.c \
 		\
 
-SRCS_FTPRINTF =	ft_printf/ft_printf.c \
-				ft_printf/ft_putnbr_hexa.c \
-				ft_printf/ft_atoi_base.c \
-				ft_printf/ft_get_base.c \
-				ft_printf/ft_strpos.c \
-				ft_printf/ft_convert_base.c \
-				ft_printf/ft_option.c \
-				ft_printf/ft_atoui.c \
-				ft_printf/ft_uitoa.c \
-				ft_printf/ft_uint.c \
-				ft_printf/ft_string.c \
-				ft_printf/ft_precision.c \
-				ft_printf/ft_print_string.c \
-				ft_printf/ft_ftoa.c \
-				ft_printf/ft_atof.c \
-				\
-
 OBJ = $(SRCS:.c=.o)
-OBJ_2 = $(SRCS_FTPRINTF:.c=.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) $(OBJ_2)
-	@ar rc $(NAME) $(OBJ) $(OBJ_2)
+$(NAME) : $(OBJ)
+	@ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 	@echo "\033[35;1m• \033[0mCompilation de $(NAME) ...\033[55G\c"
 	@echo "\033[37;1m[\033[32mOK !\033[37m]\033[0m"
@@ -120,13 +103,9 @@ $(NAME) : $(OBJ) $(OBJ_2)
 OBJ : $(OBJ)
 	$(CC) -I include/ $< -c $(SRCS)
 
-OBJ_2 : $(OBJ_2)
-	$(CC) -I include/ $< -c $(SRCS_FTPRINTF)
-
 clean :
 	@echo "\033[35;1m• \033[0mRemoving object files ...\033[55G\c"
 	@rm -rf $(OBJ)
-	@rm -rf $(OBJ_2)
 	@echo "\033[37;1m[\033[32mOK !\033[37m]\033[0m"
 
 fclean : clean
