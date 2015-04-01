@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/04/01 15:26:18 by glafitte         ###   ########.fr        #
+#    Updated: 2015/04/01 15:51:47 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,7 @@ $(NAME) : $(OBJ)
 	@echo "\033[37;1m[\033[32mOK !\033[37m]\033[0m"
 
 OBJ : $(OBJ)
-	$(CC) -I include/ $< -c $(SRCS)
+	$(CC) $(CFLAGS) $< -c $(SRCS)
 
 clean :
 	@echo "\033[35;1m• \033[0mRemoving object files ...\033[55G\c"
