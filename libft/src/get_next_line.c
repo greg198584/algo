@@ -6,88 +6,45 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/10 14:35:51 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/19 11:35:22 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/04/01 15:04:09 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <unistd.h>
+#include "libft.h"
 #include <stdlib.h>
-#include <sys/types.h>
+#include <unistd.h>
 #include <sys/uio.h>
+#include <sys/types.h>
 
-static t_gnlp		*gnl_create_param(int fd)
+static char ft_getchar(int const fd)
 {
-	t_gnlp			*p;
+	int		ret;
+	char	c;
 
-	if ((p = (t_gnlp *)malloc(sizeof(t_gnlp))) == NULL)
-		return (NULL);
-	p->fd = fd;
-	p->next = p;
-	p->buf = NULL;
-	return (p);
+	if ((ret = read(fd, &c, 1)) == 0)
+		return (0);
+	return ((ret < 0) ? -1 : c);
 }
 
-static t_gnlp		*gnl_add_param(int fd, t_gnlp *param)
+int			ft_gnl(int const fd, char **line)
 {
-	t_gnlp			*p;
+	char	*dst;
+	char	*buf;
+	char	*end;
+	int		c;
 
-	if ((p = (t_gnlp *)malloc(sizeof(t_gnlp))) == NULL)
-		return (NULL);
-	p->fd = fd;
-	p->next = param->next;
-	p->buf = NULL;
-	param->next = p;
-	return (p);
-}
-
-static t_gnlp		*gnl_init_param(int fd, t_gnlp *param)
-{
-	t_gnlp			*p;
-
-	p = param;
-	if (param == NULL)
-		param = gnl_create_param(fd);
-	else
+	if (!line || fd < 0 || !(dst = (char *)malloc(sizeof(char) * BUFF_SIZE)))
+		return (-1);
+	buf = dst;
+	end = buf + BUFF_SIZE - 1;
+	while ((c = ft_getchar(fd)) != 0 && c != 10 && buf < end)
 	{
-		while (param->next != NULL)
-		{
-			if (param->fd == fd)
-				break ;
-			if (param->next == p)
-			{
-				param = gnl_add_param(fd, param);
-				break ;
-			}
-			param = param->next;
-		}
+		if (c == -1)
+			return (-1);
+		*buf++ = c;
 	}
-	return (param);
-}
-
-int					get_next_line(int const fd, char **line)
-{
-	static t_gnlp	*p;
-	char			read_buf[BUFF_SIZE + 1];
-	char			*tmp;
-	int				r;
-
-	p = gnl_init_param(fd, p);
-	while (!ft_strchr(p->buf, '\n') && line)
-	{
-		if ((r = read(p->fd, read_buf, BUFF_SIZE)) < 1)
-			break ;
-		read_buf[r] = 0;
-		p->buf = (!p->buf) ? ft_strdup(read_buf) : ft_strjoin(p->buf, read_buf);
-	}
-	if ((tmp = ft_strchr(p->buf, '\n')) != NULL && line)
-	{
-		*line = p->buf;
-		p->buf = tmp + 1;
-		*tmp = '\0';
-		return (1);
-	}
-	else if (line)
-		*line = p->buf;
-	return ((!line) ? -1 : r);
+	*buf = 0;
+	*line = ft_strdup(dst);
+	free(dst);
+	return (c || ft_strlen(buf) || ft_strlen(*line));
 }

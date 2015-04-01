@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2015/03/31 16:09:06 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/04/01 15:24:10 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ typedef struct			s_gnlp
 	struct s_gnlp		*next;
 }						t_gnlp;
 
+int						ft_gnl(int const fd, char **line);
+void					ft_freetab(char ***tab);
 int						ft_fprintf(int fd, char const *format, ...);
-char					*ft_uitobi(unsigned int value);
 int						ft_strlen_s(const char *str);
 void					ft_puterror(char *error);
 int						ft_abs(int a);
-int						get_next_line(int const fd, char **line);
 void					ft_putstr(char const *s);
 void					ft_putchar(char c);
 int						ft_strcmp(char const *s1, char const *s2);
@@ -69,14 +69,6 @@ void					ft_memdel(void **ap);
 char					*ft_strnew(size_t size);
 void					ft_strdel(char **as);
 void					ft_strclr(char *s);
-void					ft_striter(char *s, void (*f)(char *));
-void					ft_striteri(char *s,
-									void (*f)(unsigned int, char *));
-char					*ft_strmap(const char *s, char (*f)(char));
-char					*ft_strmapi(char const *s,
-											char (*f)(unsigned int, char));
-int						ft_strequ(char const *s1, char const *s2);
-int						ft_strnequ(char const *s1, char const *s2, size_t n);
 char					*ft_strjoin(char const *s1, char const *s2);
 char					*ft_strsub(char const *s,
 									unsigned int start, size_t len);
@@ -93,9 +85,6 @@ void					ft_putendl_fd(char const *s, int fd);
 void					ft_putnbr_fd(int n, int fd);
 int						ft_pow(int n, int p);
 int						ft_match(char const *s1, char const *s2);
-char					*ft_strrep(char *str, char const *sub, char const *rep,
-									int recursive);
-char					*ft_strnrep(char *str, char *sub, char *rep, char c);
 char					*ft_strndup(char const *src, size_t len);
 int						ft_active_bits(int n);
 char					*ft_strrev(char *s);
@@ -103,7 +92,5 @@ char					*ft_char_to_str(char c);
 char					*ft_char_rep(char *str, char c1, char c2, int recurs);
 char					*ft_str_rem(char *str, char *s, int recurs);
 char					*ft_char_rem(char *str, char c, int recurs);
-char					*ft_strtrim_left(char *s, int n);
-char					*ft_strtrim_right(char *s, int n);
 
 #endif

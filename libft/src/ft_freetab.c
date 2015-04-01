@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_freetab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 13:42:10 by glafitte          #+#    #+#             */
-/*   Updated: 2014/11/06 16:01:49 by glafitte         ###   ########.fr       */
+/*   Created: 2015/04/01 14:59:32 by glafitte          #+#    #+#             */
+/*   Updated: 2015/04/01 14:59:52 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_freetab(char ***tab)
 {
-	char			*str;
-	unsigned int	i;
+	char	**s;
+	int		i;
 
-	str = ft_memalloc(ft_strlen(s));
-	i = -1;
-	while (s && *(s + ++i))
-		*(str + i) = f(i, *(char *)(s + i));
-	return (str);
+	if (tab == NULL)
+		return ;
+	i = 0;
+	s = *tab;
+	while (s[i] != NULL)
+		free(s[i++]);
+	free(s);
 }

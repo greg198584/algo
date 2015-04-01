@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/03/31 16:07:00 by glafitte         ###   ########.fr        #
+#    Updated: 2015/04/01 15:26:18 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror -g -I include/
 CC = gcc
-SRCS =	src/ft_uitobi.c \
+SRCS =	src/ft_freetab.c \
 		src/error.c \
 		src/ft_abs.c \
 		src/ft_atoi.c \
@@ -46,12 +46,6 @@ SRCS =	src/ft_uitobi.c \
 		src/ft_strnew.c \
 		src/ft_strdel.c \
 		src/ft_strclr.c \
-		src/ft_striter.c \
-		src/ft_striteri.c \
-		src/ft_strmap.c \
-		src/ft_strmapi.c \
-		src/ft_strequ.c \
-		src/ft_strnequ.c \
 		src/ft_strjoin.c \
 		src/ft_strtrim.c \
 		src/ft_strsub.c \
@@ -78,13 +72,10 @@ SRCS =	src/ft_uitobi.c \
 		\
 		src/ft_itoa.c \
 		src/ft_pow.c \
-		src/ft_strrep.c \
 		src/ft_match.c \
 		src/ft_strndup.c \
 		src/ft_active_bits.c \
 		src/ft_strrev.c \
-		src/ft_strnrep.c \
-		src/ft_char_manip.c \
 		src/ft_chartostr.c \
 		src/get_next_line.c \
 		src/ft_fprintf.c \
