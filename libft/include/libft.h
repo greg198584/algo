@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/02 11:09:04 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/04/02 11:19:34 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define REPLACE_ONCE	0
 # define REPLACE_EMPTY	""
 # define BUFF_SIZE		0x2323
-# define ERR_LOC		ft_err_loc(__FILE__, __LINE__, str)
+# define ERR_LOC(str)	ft_err_loc(__FILE__, __LINE__, str)
 
 typedef struct			s_gnlp
 {
