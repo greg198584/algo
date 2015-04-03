@@ -6,13 +6,13 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/03 13:53:18 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/03 13:54:29 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/04/03 14:00:42 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_color(const char *str, const char *color, int i)
+void	ft_putcolor(const char *str, const char *color, int i)
 {
 	ft_putstr(color);
 	ft_putstr(str);
