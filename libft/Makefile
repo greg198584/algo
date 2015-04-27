@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/04/27 17:24:11 by glafitte         ###   ########.fr        #
+#    Updated: 2015/04/27 18:08:02 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror -g -I ../include/
 CC = gcc
-SRCS =	src/ft_implode.c \
+SRCS =	src/tab_fc.c \
+		src/ft_implode.c \
 		src/ft_splittoken.c \
 		src/ft_freetab.c \
 		src/ft_putcolor.c \
