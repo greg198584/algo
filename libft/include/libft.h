@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/03 14:00:48 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/04/27 17:23:04 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,6 @@ char					*ft_char_to_str(char c);
 char					*ft_char_rep(char *str, char c1, char c2, int recurs);
 char					*ft_str_rem(char *str, char *s, int recurs);
 char					*ft_char_rem(char *str, char c, int recurs);
+char					**ft_splittoken(char const *s, char const *tokens);
 
 #endif

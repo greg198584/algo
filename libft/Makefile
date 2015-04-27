@@ -6,16 +6,18 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/04/03 13:53:09 by glafitte         ###   ########.fr        #
+#    Updated: 2015/04/27 17:24:11 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
 
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror -g -I include/
+CFLAGS = -Wall -Wextra -Werror -g -I ../include/
 CC = gcc
-SRCS =	src/ft_freetab.c \
+SRCS =	src/ft_implode.c \
+		src/ft_splittoken.c \
+		src/ft_freetab.c \
 		src/ft_putcolor.c \
 		src/error.c \
 		src/ft_abs.c \
