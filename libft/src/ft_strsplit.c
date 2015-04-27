@@ -6,90 +6,55 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 14:18:41 by glafitte          #+#    #+#             */
-/*   Updated: 2014/11/12 09:44:09 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/04/27 17:13:08 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-static int		ft_strlensplit(char const *s, char c)
+static int		ft_count(char const *s, char c)
 {
-	int		index;
-	int		length;
+	int		i;
+	int		j;
+	int		w;
 
-	index = 0;
-	length = 0;
-	if (!s)
-		return (0);
-	while (s[index] == c)
-		index++;
-	while (s[index])
+	w = 1;
+	i = 0;
+	while (*(s + i) != '\0')
 	{
-		if (index == 0)
-		{
-			if (s[index] != c)
-				length++;
-		}
-		else if (s[index] != c && s[index - 1] == c)
-			length++;
-		index++;
+		while (*(s + i) == c)
+			i++;
+		j = i;
+		while (*(s + i) != 0 && *(s + i) != c)
+			i++;
+		if (i != j)
+			w++;
 	}
-	return (length);
-}
-
-static int		ft_strlenwordsplit(const char *s, char c, int index)
-{
-	int		length;
-
-	length = 0;
-	while (s[index] && s[index] != c)
-	{
-		length++;
-		index++;
-	}
-	return (length);
-}
-
-static char		*ft_next_wordsplit(char const *s, char c, int *index)
-{
-	char	*word;
-	int		size;
-	int		index2;
-
-	while (s[*index] == c)
-		*index += 1;
-	size = ft_strlenwordsplit(s, c, *index);
-	if ((word = (char *)malloc(sizeof(*word) * (size + 1))) == NULL)
-		return (NULL);
-	index2 = 0;
-	while (index2 < size)
-	{
-		word[index2] = s[*index];
-		*index += 1;
-		index2++;
-	}
-	word[index2] = '\0';
-	return (word);
+	return (w);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
-	int		size_tab;
-	int		index;
-	int		tab_index;
+	int		i;
+	int		j;
+	int		w;
 
-	size_tab = ft_strlensplit(s, c);
-	tab = NULL;
-	if ((tab = (char **)malloc((size_tab + 1) * sizeof(*tab))) == NULL)
+	if (!(tab = (char **)malloc(sizeof(char *) * ft_count(s, c))))
 		return (NULL);
-	index = 0;
-	tab_index = 0;
-	while (tab_index < size_tab)
+	w = 0;
+	i = 0;
+	while (*(s + i) != '\0')
 	{
-		tab[tab_index] = ft_next_wordsplit(s, c, &index);
-		tab_index++;
+		while (*(s + i) == c)
+			i++;
+		j = i;
+		while (*(s + i) != 0 && *(s + i) != c)
+			i++;
+		if (i != j)
+			tab[w++] = ft_strndup(s + j, i - j);
 	}
-	tab[tab_index] = NULL;
+	tab[w] = NULL;
 	return (tab);
 }
