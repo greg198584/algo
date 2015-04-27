@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/27 17:24:45 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/27 17:31:33 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/04/27 17:36:41 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 char	*ft_implode(char **tab, char const *to_put)
 {
 	char	*dst;
-	char	size;
-	char	i;
+	int		size;
+	int		i;
 
 	i = -1;
 	size = 0;
