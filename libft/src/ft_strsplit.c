@@ -6,14 +6,14 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 14:18:41 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/27 17:13:08 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/04/27 17:17:17 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int		ft_count(char const *s, char c)
+static int	ft_count(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -34,7 +34,7 @@ static int		ft_count(char const *s, char c)
 	return (w);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		i;

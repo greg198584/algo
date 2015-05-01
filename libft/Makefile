@@ -6,16 +6,17 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/04/27 18:08:02 by glafitte         ###   ########.fr        #
+#    Updated: 2015/05/01 19:28:01 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
 
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror -g -I ../include/
+CFLAGS = -Wall -Wextra -Werror -g -I include
 CC = gcc
-SRCS =	src/tab_fc.c \
+SRCS =	src/ft_strrep.c \
+		src/tab_fc.c \
 		src/ft_implode.c \
 		src/ft_splittoken.c \
 		src/ft_freetab.c \
@@ -83,6 +84,7 @@ SRCS =	src/tab_fc.c \
 		src/ft_chartostr.c \
 		src/get_next_line.c \
 		src/ft_fprintf.c \
+		src/ft_option.c \
 		\
 
 OBJ = $(SRCS:.c=.o)
