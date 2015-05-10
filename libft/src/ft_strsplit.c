@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 14:18:41 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/27 17:17:17 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/05/08 10:37:36 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char		**ft_strsplit(char const *s, char c)
 	int		j;
 	int		w;
 
-	if (!(tab = (char **)malloc(sizeof(char *) * ft_count(s, c))))
+	if (!(tab = (char **)ft_memalloc(sizeof(char *) * ft_count(s, c))))
 		return (NULL);
 	w = 0;
 	i = 0;

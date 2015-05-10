@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/16 09:43:56 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/28 15:22:53 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/05/06 22:53:25 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int		ft_err_loc(char *file, int line, char *msg)
 	ft_fprintf(2, "%s", file);
 	ft_fprintf(2, " at line: ");
 	ft_fprintf(2, "%d\n", line);
-	return (1);
+	return (-1);
 }

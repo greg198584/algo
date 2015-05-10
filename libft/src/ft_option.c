@@ -6,7 +6,7 @@
 /*   By: glafitte <glafitte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/30 18:55:19 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/30 20:42:38 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/05/07 16:20:01 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_getopt(char c, char const *s)
 	while (s && *(s + i))
 		if (c == *(s + i++))
 			return (ft_pow(2, i - 1));
-		return (0);
+	return (0);
 }
 
 int			ft_option(int argc, char **argv, char const *opt, int *start)
