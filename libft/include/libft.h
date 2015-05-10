@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2015/05/01 19:28:18 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/05/10 11:22:53 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,11 @@ char					**ft_splittoken(char const *s, char const *tokens);
 char					*ft_implode(char **tab, char const *to_put);
 int						ft_count_tab(char **tab);
 int						ft_print_tab(char **tab);
-char					*ft_strrep(char const *str, char *sub, char *rep, int r);
-char					*ft_strrepf(char const *str, char *sub, char *rep, int r);
-int						ft_option(int argc, char **argv, char const *opt, int *start);
+char					*ft_strrep(char const *str, char *sub, char *rep,
+									int r);
+char					*ft_strrepf(char const *str, char *sub, char *rep,
+									int r);
+int						ft_option(int argc, char **argv, char const *opt,
+									int *start);
 
 #endif
